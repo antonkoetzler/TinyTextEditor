@@ -1,0 +1,147 @@
+@font-face {
+  font-family: "Iosevka Regular";
+  src: url("iosevka-regular.ttf");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  max-height: 100vh;
+  margin: 0; padding: 0;
+  background: #101010;
+  font-family: "Iosekva Regular";
+  font-size: 32px; color: #EDE6D6;
+}
+
+p, h1 {
+  margin: 0; padding: 0;
+  user-select: none;
+  white-space: none;
+  font-family: "Iosevka Regular";
+}
+
+header {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%; height: 50px;
+  border-bottom: 2px solid #EDE6D6;
+}
+
+header > div > button {
+  height: 48px;
+  outline: none; background: none; border: none;
+  font-family: "Iosevka Regular";
+  font-size: 32px; color: #EDE6D6;
+  padding: 0px 10px;
+  cursor: pointer;
+}
+header > div > button:hover {
+  background: #EDE6D6;
+  color: #101010;
+}
+
+header > div > ul {
+  display: none;
+  list-style-type: none;
+  margin: 0; padding: 0;
+  background: #101010;
+  border: 2px solid #EDE6D6;
+  border-top: 2px solid #EDE6D6;
+  border-bottom: none;
+  font-family: "Iosevka Regular";
+  font-size: 32px; color: #EDE6D6;
+  position: absolute;
+}
+#file {
+  border-left: none;
+}
+#view {
+  left: 84px;
+}
+header > div > ul > p {
+  padding: 5px 10px;
+  border-bottom: 2px solid #EDE6D6;
+  cursor: pointer;
+}
+header > div > ul > p:hover {
+  background: #EDE6D6;
+  color: #101010;
+}
+
+/* Header button divider */
+.divider {
+  display: inline;
+  width: 2.3px; height: 50px;
+  background: #EDE6D6;
+}
+
+header > h1 {
+  height: 48px;
+  font-size: 38px;
+  line-height: 48px;
+  position: fixed;
+  top: 0; right: 10px;
+}
+header > h1:before {
+  content: "Tiny Text Editor";
+}
+
+main {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%; height: calc(100vh - 50px);
+  overflow-y: auto;
+}
+/* A 'tab' */
+main > textarea {
+  resize: none; background: none;
+  border: none; outline: none;
+  font-family: "Iosevka Regular";
+  font-size: 32px; color: #EDE6D6;
+  padding: 10px;
+  flex: 1;
+}
+
+#fileInput {
+  display: none;
+}
+
+#about {
+  width: 350px;
+  display: none;
+  flex-flow: column nowrap;
+  border: 2px solid #EDE6D6;
+  text-align: center;
+  font-size: 22px;
+  padding: 5px 0px;
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+#about p {
+  padding: 4px 10px;
+}
+#about button {
+  background: none; outline;
+  border: 2px solid #EDE6D6;
+  width: 100px;
+  cursor: pointer;
+  position: relative;
+  left: 50%; transform: translateX(-50%);
+  font-family: "Iosevka Regular";
+  font-size: 22px; color: #EDE6D6;
+  margin: 10px 0px;
+}
+#about button:hover {
+  background: #EDE6D6;
+  color: #101010;
+}
+
+@media only screen and (max-width: 750px) {
+  header > h1:before {
+    content: "TTE";
+    line-height: 52px;
+  }
+}

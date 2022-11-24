@@ -5,10 +5,55 @@
 <head>
   <title>TinyTextEditor</title>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css" />
 </head>
 
 <body>
-  <p>Hello, World</p>
+  <header>
+    <div>
+      <button onclick="toggleDropdown('#file')">File</button>
+      <ul id="file">
+        <p onclick="openFile()">Open&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~ Ctrl + [</p>
+        <p onclick="newTab()">New Tab&nbsp;&nbsp;&nbsp;~ Ctrl + Y</p>
+        <p onclick="closeTab()">Close Tab ~ Ctrl + X</p>
+        <p onclick="save()">Save&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~ Ctrl + S</p>
+        <p>About&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~ Alt&nbsp;&nbsp;+ A</p>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <div>
+      <button onclick="toggleDropdown('#view')">View</button>
+      <ul id="view">
+        <p onclick="zoomIn()">Zoom in&nbsp;&nbsp;~ Ctrl + +</p>
+        <p onclick="zoomOut()">Zoom out ~ Ctrl + -</p>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <h1></h1>
+  </header>
+
+  <!-- About dialog -->
+  <section id="about">
+    <p>My final NMED3520 assignment</p>
+    <p>Author: Anton Koetzler-Faust</p>
+    <p>2022</p>
+    <button onclick="toggleAbout()">Return</button>
+  </section>
+
+  <main>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+  <script src="index.js"></script>
 </body>
+
+<!-- Off page input for opening files -->
+<input id="fileInput" type="file" />
 
 </html>
